@@ -1,0 +1,291 @@
+{
+  "note": "Editorial subtask summaries based on footage, not verbatim agent logs. Relative speeds apply to supplied clips, some already accelerated.",
+  "demos": {
+    "bottles": {
+      "source": "materials/demo-processed/\u6293\u6c34\u74f6/front.mp4",
+      "duration": 41.266,
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.0,
+          "label": "Pick up a bottle",
+          "source_start": 0,
+          "source_end": 18,
+          "relative_speed": 6
+        },
+        {
+          "start": 3.0,
+          "end": 13.0,
+          "label": "Pick up a bottle",
+          "source_start": 18,
+          "source_end": 48,
+          "relative_speed": 3
+        },
+        {
+          "start": 13.0,
+          "end": 18.6,
+          "label": "Place the bottle in the box",
+          "source_start": 48,
+          "source_end": 76,
+          "relative_speed": 5
+        },
+        {
+          "start": 18.6,
+          "end": 27.1,
+          "label": "Pick up the next bottle",
+          "source_start": 76,
+          "source_end": 110,
+          "relative_speed": 4
+        },
+        {
+          "start": 27.1,
+          "end": 41.266,
+          "label": "Place the bottle in the box",
+          "source_start": 110,
+          "source_end": 152.498,
+          "relative_speed": 3
+        }
+      ],
+      "source_speed_spans": [
+        [
+          0,
+          10000,
+          1
+        ]
+      ]
+    },
+    "memory": {
+      "source": "materials/demo-processed/\u4e09\u4ed9\u5f52\u6d1e/memory_edited_8x_3x_timestamped_silent_fast.mp4",
+      "duration": 34.406666666666666,
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.0,
+          "label": "Listen to the user instruction",
+          "source_start": 0,
+          "source_end": 12,
+          "relative_speed": 4
+        },
+        {
+          "start": 3.0,
+          "end": 9.0,
+          "label": "Track the target cup",
+          "source_start": 12,
+          "source_end": 24,
+          "relative_speed": 2
+        },
+        {
+          "start": 9.0,
+          "end": 14.0,
+          "label": "Interrupt - Clear the cluttered table - Pick up the bottle",
+          "source_start": 24,
+          "source_end": 39,
+          "relative_speed": 3
+        },
+        {
+          "start": 14.0,
+          "end": 17.666666666666668,
+          "label": "Interrupt - Clear the table - Place the bottle in the box",
+          "source_start": 39,
+          "source_end": 50,
+          "relative_speed": 3
+        },
+        {
+          "start": 17.666666666666668,
+          "end": 20.166666666666668,
+          "label": "Resume the cup task - Recall the target cup",
+          "source_start": 50,
+          "source_end": 60,
+          "relative_speed": 4
+        },
+        {
+          "start": 20.166666666666668,
+          "end": 26.166666666666668,
+          "label": "Resume the cup task - Track the target cup",
+          "source_start": 60,
+          "source_end": 72,
+          "relative_speed": 2
+        },
+        {
+          "start": 26.166666666666668,
+          "end": 34.406666666666666,
+          "label": "Press the button for the target cup",
+          "source_start": 72,
+          "source_end": 96.72,
+          "relative_speed": 3
+        }
+      ],
+      "source_speed_spans": [
+        [
+          0.0,
+          16.0,
+          1
+        ],
+        [
+          16.0,
+          23.5,
+          8
+        ],
+        [
+          23.5,
+          37.5,
+          1
+        ],
+        [
+          37.5,
+          44.0,
+          3
+        ],
+        [
+          44.0,
+          44.5,
+          1
+        ],
+        [
+          44.5,
+          45.3,
+          8
+        ],
+        [
+          45.3,
+          48.0,
+          3
+        ],
+        [
+          48.0,
+          61.0,
+          1
+        ],
+        [
+          61.0,
+          67.6,
+          8
+        ],
+        [
+          67.6,
+          70.1,
+          3
+        ],
+        [
+          70.1,
+          71.6,
+          1
+        ],
+        [
+          71.6,
+          75.1,
+          3
+        ],
+        [
+          75.1,
+          79.6,
+          1
+        ],
+        [
+          79.6,
+          80.7,
+          8
+        ],
+        [
+          80.7,
+          83.4,
+          3
+        ],
+        [
+          83.4,
+          86.4,
+          1
+        ],
+        [
+          86.4,
+          91.4,
+          3
+        ],
+        [
+          91.4,
+          95.4,
+          1
+        ],
+        [
+          95.4,
+          96.7,
+          3
+        ]
+      ]
+    },
+    "box": {
+      "source": "materials/demo-processed/\u642c\u7bb1\u5b50/box_8x_timestamped_silent.mp4",
+      "duration": 9.697312252964426,
+      "segments": [
+        {
+          "start": 0,
+          "end": 3.84,
+          "label": "Grasp the box with both hands",
+          "source_start": 0,
+          "source_end": 4.8,
+          "relative_speed": 1.25
+        },
+        {
+          "start": 3.84,
+          "end": 5.658181818181818,
+          "label": "Pick up the box",
+          "source_start": 4.8,
+          "source_end": 6.8,
+          "relative_speed": 1.1
+        },
+        {
+          "start": 5.658181818181818,
+          "end": 9.697312252964426,
+          "label": "Carry the box to the destination",
+          "source_start": 6.8,
+          "source_end": 11.445,
+          "relative_speed": 1.15
+        }
+      ],
+      "source_speed_spans": [
+        [
+          0,
+          10000,
+          8
+        ]
+      ]
+    },
+    "chair": {
+      "source": "materials/demo-processed/\u63a8\u6905\u5b50/chair_8x_timestamped_silent.mp4",
+      "duration": 5.806679841897234,
+      "segments": [
+        {
+          "start": 0,
+          "end": 1.9130434782608698,
+          "label": "Move toward the chair",
+          "source_start": 0,
+          "source_end": 2.2,
+          "relative_speed": 1.15
+        },
+        {
+          "start": 1.9130434782608698,
+          "end": 3.0948616600790517,
+          "label": "Grasp the chair backrest",
+          "source_start": 2.2,
+          "source_end": 3.5,
+          "relative_speed": 1.1
+        },
+        {
+          "start": 3.0948616600790517,
+          "end": 5.806679841897234,
+          "label": "Push the chair toward the table",
+          "source_start": 3.5,
+          "source_end": 6.483,
+          "relative_speed": 1.1
+        }
+      ],
+      "source_speed_spans": [
+        [
+          0,
+          10000,
+          8
+        ]
+      ]
+    }
+  }
+}

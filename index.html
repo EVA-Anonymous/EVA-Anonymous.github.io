@@ -7,7 +7,7 @@
   <meta name="description" content="Watch EVA in action: real-world humanoid demonstrations and simulation videos.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="EVA | Video Demos">
-  <meta property="og:description" content="Explore four real-world demonstrations and two simulation examples.">
+  <meta property="og:description" content="Explore a baseline comparison, two simulation analyses, and four agent-guided real-world demonstrations.">
   <meta property="og:image" content="assets/images/bottles.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <title>EVA | Video Demos</title>
@@ -18,23 +18,39 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#real-world">Skip to demos</a>
+  <a class="skip-link" href="#simulation-demos">Skip to demos</a>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="EVA home">EVA<span class="wordmark-dot"></span></a>
     <span class="header-label">Video demos</span>
-    <nav class="top-nav" aria-label="Main navigation"><a href="#real-world">Real-world</a><a href="#simulation-demos">Simulation</a></nav>
+    <nav class="top-nav" aria-label="Main navigation"><a href="#simulation-demos">Simulation</a><a href="#real-world">Real-world</a></nav>
     <button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" title="Open navigation"><i data-lucide="menu"></i></button>
   </header>
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#real-world">Real-world</a><a href="#simulation-demos">Simulation</a></nav>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#simulation-demos">Simulation</a><a href="#real-world">Real-world</a></nav>
   <main id="top" class="demo-layout">
     <div class="demo-intro">
       <h1><span class="title-mark">EVA</span>A Memory-Augmented Harness<br class="title-break"> for Long-Horizon Embodied Tasks</h1>
     </div>
+    <section id="simulation-demos" class="demo-section" aria-labelledby="simulation-title">
+      <h2 id="simulation-title">Simulation demos</h2>
+            <figure class="simulation-demo">
+              <div class="simulation-heading"><h3>EVA vs. VoLo</h3><span class="simulation-duration">Baseline comparison</span></div>
+              <video id="sim-baseline-video" controls playsinline preload="none" poster="assets/images/sim-baseline.jpg" width="1280" height="830" aria-label="EVA versus VoLo baseline comparison"><source src="assets/videos/sim-baseline.mp4" type="video/mp4"></video>
+              <figcaption class="comparison-note">Same task and initial scene. EVA repositions before the next grasp; VoLo continues from the preceding placement configuration.</figcaption>
+            </figure>
+            <figure class="simulation-demo">
+              <div class="simulation-heading"><h3>EVA vs EVA w/o Monitor</h3></div>
+              <video id="sim-monitor-video" controls playsinline preload="none" poster="assets/images/sim-monitor.jpg" width="1280" height="844" aria-label="Simulation example illustrating EVA's monitor"><source src="assets/videos/sim-monitor.mp4" type="video/mp4"></video>
+            </figure>
+            <figure class="simulation-demo">
+              <div class="simulation-heading"><h3>EVA vs EVA w/o Recovery</h3></div>
+              <video id="sim-recovery-video" controls playsinline preload="none" poster="assets/images/sim-recovery.jpg" width="1280" height="824" aria-label="Simulation example illustrating EVA's recovery"><source src="assets/videos/sim-recovery.mp4" type="video/mp4"></video>
+            </figure>
+    </section>
     <section id="real-world" class="demo-section" aria-labelledby="real-title">
       <h2 id="real-title">Real-world demos</h2>
             <figure class="demo-player">
               <div class="video-frame"><video id="demo-video" controls playsinline preload="none" poster="assets/images/bottles.jpg" aria-label="Bottle placement demonstration"><source src="assets/videos/bottles.mp4" type="video/mp4"></video><span class="video-badge" id="demo-badge">Kepler K2</span></div>
-              <figcaption><h3 id="demo-title">Bottle placement</h3><span id="demo-speed">Source playback</span></figcaption>
+              <figcaption><h3 id="demo-title">Bottle placement</h3></figcaption>
             </figure>
             <div class="demo-picker" role="group" aria-label="Choose a real-world demonstration">
               <button class="demo-choice selected" data-demo="bottles" aria-pressed="true"><span class="thumb"><img src="assets/images/bottles.jpg" width="960" height="544" alt="" loading="lazy"><i data-lucide="play"></i></span><span class="demo-number">01</span><span>Bottle placement</span></button>
@@ -42,17 +58,6 @@
               <button class="demo-choice" data-demo="box" aria-pressed="false"><span class="thumb"><img src="assets/images/box.jpg" width="1280" height="720" alt="" loading="lazy"><i data-lucide="play"></i></span><span class="demo-number">03</span><span>Box transport</span></button>
               <button class="demo-choice" data-demo="chair" aria-pressed="false"><span class="thumb"><img src="assets/images/chair.jpg" width="1280" height="720" alt="" loading="lazy"><i data-lucide="play"></i></span><span class="demo-number">04</span><span>Chair pushing</span></button>
             </div>
-    </section>
-    <section id="simulation-demos" class="demo-section" aria-labelledby="simulation-title">
-      <h2 id="simulation-title">Simulation demos</h2>
-            <figure class="simulation-demo">
-              <div class="simulation-heading"><h3>Monitor</h3><span class="simulation-duration">28 sec</span></div>
-              <video id="sim-monitor-video" controls playsinline preload="none" poster="assets/images/sim-monitor.jpg" width="1280" height="844" aria-label="Simulation example illustrating EVA's monitor"><source src="assets/videos/sim-monitor.mp4" type="video/mp4"></video>
-            </figure>
-            <figure class="simulation-demo">
-              <div class="simulation-heading"><h3>Recovery</h3><span class="simulation-duration">35 sec</span></div>
-              <video id="sim-recovery-video" controls playsinline preload="none" poster="assets/images/sim-recovery.jpg" width="1280" height="824" aria-label="Simulation example illustrating EVA's recovery"><source src="assets/videos/sim-recovery.mp4" type="video/mp4"></video>
-            </figure>
     </section>
   </main>
   <footer class="site-footer"><a class="wordmark" href="#top">EVA<span class="wordmark-dot"></span></a><a href="#top" class="back-top" aria-label="Back to top" title="Back to top"><i data-lucide="arrow-up"></i></a></footer>

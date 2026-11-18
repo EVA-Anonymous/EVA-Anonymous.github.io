@@ -108,8 +108,10 @@ def check(url):
         ready()
         assert driver.title == "EVA | Video Demos"
         assert not driver.find_elements(By.CSS_SELECTOR, '.hero, .paper-section, #authors, #resources, [data-lightbox]')
-        assert len(driver.find_elements(By.CSS_SELECTOR, 'video')) == 3
+        assert len(driver.find_elements(By.CSS_SELECTOR, 'video')) == 4
         assert len(driver.find_elements(By.CSS_SELECTOR, '[data-demo]')) == 4
+        assert js("return document.querySelector('.demo-section').id") == "simulation-demos"
+        assert not driver.find_elements(By.ID, 'demo-speed')
         assert not driver.find_elements(By.CSS_SELECTOR, '.intro-summary, .intro-actions, .review-note, #demo-description, .section-summary')
         assert js("return [...document.querySelectorAll('a[href^=\"#\"]')].every(a => document.querySelector(a.getAttribute('href')))")
         # Load the small thumbnails before capturing full-page screenshots;
@@ -125,7 +127,7 @@ def check(url):
 
         for width in [1440, 390, 320]:
             driver.set_window_size(width, 1000)
-            for key, expected_width, expected_height in [("monitor", 1280, 844), ("recovery", 1280, 824)]:
+            for key, expected_width, expected_height in [("baseline", 1280, 830), ("monitor", 1280, 844), ("recovery", 1280, 824)]:
                 selector = f"#sim-{key}-video"
                 video = find(selector)
                 js("arguments[0].scrollIntoView({block:'center',behavior:'instant'})", video)
@@ -137,7 +139,7 @@ def check(url):
                 js("arguments[0].pause()", video)
                 driver.save_screenshot(str(output / f"sim-{key}-{width}.png"))
         driver.set_window_size(320, 740)
-        print("PASS: both simulation videos decode at native aspect ratios on desktop and mobile")
+        print("PASS: all three simulation videos decode at native aspect ratios on desktop and mobile")
 
         click(".menu-toggle")
         assert find("#mobile-nav").is_displayed()
@@ -175,7 +177,7 @@ def check(url):
         assert "/eva-preview/" in find("#demo-video source").get_attribute("src")
         click('[data-demo="box"]')
         assert "/eva-preview/assets/videos/box.mp4" in find("#demo-video source").get_attribute("src")
-        for key in ["monitor", "recovery"]:
+        for key in ["baseline", "monitor", "recovery"]:
             assert f"/eva-preview/assets/videos/sim-{key}.mp4" in find(f"#sim-{key}-video source").get_attribute("src")
         FixtureHandler.configured = True
         driver.get(fixture_url)

@@ -47,10 +47,10 @@
   window.matchMedia("(min-width: 541px)").addEventListener("change", closeMenu);
 
   const demos = {
-    bottles: { title: "Bottle placement", speed: "Source playback" },
-    memory: { title: "Three-cup task", speed: "Mixed 8× / 3× + source speed-up" },
-    box: { title: "Box transport", speed: "8\u00d7 playback" },
-    chair: { title: "Chair pushing", speed: "8\u00d7 playback" },
+    bottles: { title: "Bottle placement" },
+    memory: { title: "Three-cup task" },
+    box: { title: "Box transport" },
+    chair: { title: "Chair pushing" },
   };
   const demoVideo = document.getElementById("demo-video");
   document.querySelectorAll("[data-demo]").forEach((button) => {
@@ -65,7 +65,6 @@
       demoVideo.setAttribute("aria-label", `${demo.title} demonstration`);
       demoVideo.load();
       document.getElementById("demo-title").textContent = demo.title;
-      document.getElementById("demo-speed").textContent = demo.speed;
       document.querySelectorAll("[data-demo]").forEach((choice) => {
         const selected = choice === button;
         choice.classList.toggle("selected", selected);
