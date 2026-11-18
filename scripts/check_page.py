@@ -110,7 +110,13 @@ def check(url):
         assert not driver.find_elements(By.CSS_SELECTOR, '.hero, .paper-section, #authors, #resources, [data-lightbox]')
         assert len(driver.find_elements(By.CSS_SELECTOR, 'video')) == 3
         assert len(driver.find_elements(By.CSS_SELECTOR, '[data-demo]')) == 4
+        assert len(driver.find_elements(By.CSS_SELECTOR, '.intro-actions a')) == 2
+        assert find('.review-note').text
         assert js("return [...document.querySelectorAll('a[href^=\"#\"]')].every(a => document.querySelector(a.getAttribute('href')))")
+        # Load the small thumbnails before capturing full-page screenshots;
+        # otherwise off-screen lazy images can appear blank in the capture.
+        js("document.querySelectorAll('img[loading]').forEach(img => img.loading = 'eager')")
+        wait.until(lambda _: js("return [...document.images].every(img => img.complete && img.naturalWidth > 0)"))
         for width, height in [(1440, 1000), (1920, 1080), (800, 1000), (390, 844), (320, 740)]:
             driver.set_window_size(width, height)
             js("window.scrollTo({top:0,behavior:'instant'})")
@@ -145,6 +151,8 @@ def check(url):
 
         for key in ["box", "chair", "memory", "bottles"]:
             click(f'[data-demo="{key}"]')
+            assert find(f'[data-demo="{key}"]').get_attribute('aria-pressed') == 'true'
+            assert len(driver.find_elements(By.CSS_SELECTOR, '.demo-choice[aria-pressed="true"]')) == 1
             js("const v=document.getElementById('demo-video'); v.muted=true; v.play().catch(e=>window.videoError=e.message)")
             wait.until(lambda _: js("return document.getElementById('demo-video').currentTime > .1"))
             state = js("const v=document.getElementById('demo-video'); return {width:v.videoWidth,height:v.videoHeight,error:v.error?.message}")
