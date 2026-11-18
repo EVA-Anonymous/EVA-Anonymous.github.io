@@ -47,10 +47,10 @@
   window.matchMedia("(min-width: 541px)").addEventListener("change", closeMenu);
 
   const demos = {
-    bottles: { title: "Bottle placement", description: "A task where ordering matters: EVA plans to move the orange bottle before the white bottle to avoid an unintended collision.", speed: "Source playback" },
-    memory: { title: "Three-cup task", description: "A real-world three-cup demonstration, presented with the original edited sequence and timestamps.", speed: "Mixed source speed-up" },
-    box: { title: "Box transport", description: "A qualitative real-world demonstration of the humanoid interacting with and transporting a box.", speed: "8\u00d7 playback" },
-    chair: { title: "Chair pushing", description: "A qualitative real-world demonstration of the humanoid pushing a chair.", speed: "8\u00d7 playback" },
+    bottles: { title: "Bottle placement", speed: "Source playback" },
+    memory: { title: "Three-cup task", speed: "Mixed 8× / 3× + source speed-up" },
+    box: { title: "Box transport", speed: "8\u00d7 playback" },
+    chair: { title: "Chair pushing", speed: "8\u00d7 playback" },
   };
   const demoVideo = document.getElementById("demo-video");
   document.querySelectorAll("[data-demo]").forEach((button) => {
@@ -65,7 +65,6 @@
       demoVideo.setAttribute("aria-label", `${demo.title} demonstration`);
       demoVideo.load();
       document.getElementById("demo-title").textContent = demo.title;
-      document.getElementById("demo-description").textContent = demo.description;
       document.getElementById("demo-speed").textContent = demo.speed;
       document.querySelectorAll("[data-demo]").forEach((choice) => {
         const selected = choice === button;

@@ -110,8 +110,7 @@ def check(url):
         assert not driver.find_elements(By.CSS_SELECTOR, '.hero, .paper-section, #authors, #resources, [data-lightbox]')
         assert len(driver.find_elements(By.CSS_SELECTOR, 'video')) == 3
         assert len(driver.find_elements(By.CSS_SELECTOR, '[data-demo]')) == 4
-        assert len(driver.find_elements(By.CSS_SELECTOR, '.intro-actions a')) == 2
-        assert find('.review-note').text
+        assert not driver.find_elements(By.CSS_SELECTOR, '.intro-summary, .intro-actions, .review-note, #demo-description, .section-summary')
         assert js("return [...document.querySelectorAll('a[href^=\"#\"]')].every(a => document.querySelector(a.getAttribute('href')))")
         # Load the small thumbnails before capturing full-page screenshots;
         # otherwise off-screen lazy images can appear blank in the capture.

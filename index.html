@@ -21,25 +21,20 @@
   <a class="skip-link" href="#real-world">Skip to demos</a>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="EVA home">EVA<span class="wordmark-dot"></span></a>
-    <span class="header-label">Supplementary videos</span>
+    <span class="header-label">Video demos</span>
     <nav class="top-nav" aria-label="Main navigation"><a href="#real-world">Real-world</a><a href="#simulation-demos">Simulation</a></nav>
     <button class="icon-button menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" title="Open navigation"><i data-lucide="menu"></i></button>
   </header>
   <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#real-world">Real-world</a><a href="#simulation-demos">Simulation</a></nav>
   <main id="top" class="demo-layout">
     <div class="demo-intro">
-      <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Anonymous submission · ICLR 2027</p>
       <h1><span class="title-mark">EVA</span>A Memory-Augmented Harness<br class="title-break"> for Long-Horizon Embodied Tasks</h1>
-      <p class="intro-summary">From real-world manipulation to simulation: a closer look at task execution, monitoring, and recovery.</p>
-      <div class="intro-actions"><a class="primary-link" href="#real-world"><i data-lucide="play"></i> Real-world demos <span>04</span></a><a class="secondary-link" href="#simulation-demos">Simulation demos <span>02</span><i data-lucide="arrow-down-right"></i></a></div>
-      <p class="intro-note">Video supplementary material · Qualitative examples</p>
     </div>
     <section id="real-world" class="demo-section" aria-labelledby="real-title">
-      <div class="section-heading"><div><p class="eyebrow">01 / Physical world</p><h2 id="real-title">Real-world demonstrations</h2></div><span class="platform-label"><i data-lucide="bot"></i> Kepler K2</span></div>
-      <p class="section-summary">Four tasks on a humanoid platform. Select a thumbnail to explore each demonstration.</p>
+      <h2 id="real-title">Real-world demos</h2>
             <figure class="demo-player">
               <div class="video-frame"><video id="demo-video" controls playsinline preload="none" poster="assets/images/bottles.jpg" aria-label="Bottle placement demonstration"><source src="assets/videos/bottles.mp4" type="video/mp4"></video><span class="video-badge" id="demo-badge">Kepler K2</span></div>
-              <figcaption><div><p class="caption-label">About this demonstration</p><h3 id="demo-title">Bottle placement</h3><p id="demo-description">A task where ordering matters: EVA plans to move the orange bottle before the white bottle to avoid an unintended collision.</p></div><span id="demo-speed">Source playback</span></figcaption>
+              <figcaption><h3 id="demo-title">Bottle placement</h3><span id="demo-speed">Source playback</span></figcaption>
             </figure>
             <div class="demo-picker" role="group" aria-label="Choose a real-world demonstration">
               <button class="demo-choice selected" data-demo="bottles" aria-pressed="true"><span class="thumb"><img src="assets/images/bottles.jpg" width="960" height="544" alt="" loading="lazy"><i data-lucide="play"></i></span><span class="demo-number">01</span><span>Bottle placement</span></button>
@@ -47,23 +42,19 @@
               <button class="demo-choice" data-demo="box" aria-pressed="false"><span class="thumb"><img src="assets/images/box.jpg" width="1280" height="720" alt="" loading="lazy"><i data-lucide="play"></i></span><span class="demo-number">03</span><span>Box transport</span></button>
               <button class="demo-choice" data-demo="chair" aria-pressed="false"><span class="thumb"><img src="assets/images/chair.jpg" width="1280" height="720" alt="" loading="lazy"><i data-lucide="play"></i></span><span class="demo-number">04</span><span>Chair pushing</span></button>
             </div>
-            <aside class="review-note"><i data-lucide="info" aria-hidden="true"></i><div><h3>Viewing notes</h3><p class="fine-print">Videos retain their source edits and embedded timestamps. Box transport and chair pushing are 8&times; accelerated; the three-cup clip uses mixed 8&times; / 3&times; edits with additional source speed-up. These are qualitative examples, not benchmark success-rate measurements.</p></div></aside>
     </section>
     <section id="simulation-demos" class="demo-section" aria-labelledby="simulation-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / Simulation</p><h2 id="simulation-title">Monitoring &amp; recovery</h2></div><span class="platform-label">Two video examples</span></div>
-      <p class="section-summary">Inspect two execution mechanisms in context. Each video retains its full frame; use fullscreen for a closer look.</p>
+      <h2 id="simulation-title">Simulation demos</h2>
             <figure class="simulation-demo">
-              <div class="simulation-heading"><span class="note-number">A</span><div><h3>Monitor</h3><p>Terminate the rollout at the right time.</p></div><span class="simulation-duration"><i data-lucide="clock"></i> 28 sec</span></div>
+              <div class="simulation-heading"><h3>Monitor</h3><span class="simulation-duration">28 sec</span></div>
               <video id="sim-monitor-video" controls playsinline preload="none" poster="assets/images/sim-monitor.jpg" width="1280" height="844" aria-label="Simulation example illustrating EVA's monitor"><source src="assets/videos/sim-monitor.mp4" type="video/mp4"></video>
-              <figcaption>The Monitor checks termination conditions during execution. Timely termination helps prevent undesired policy behavior after a subtask has finished.</figcaption>
             </figure>
             <figure class="simulation-demo">
-              <div class="simulation-heading"><span class="note-number">B</span><div><h3>Recovery</h3><p>Prepare a stable state for the next execution.</p></div><span class="simulation-duration"><i data-lucide="clock"></i> 35 sec</span></div>
+              <div class="simulation-heading"><h3>Recovery</h3><span class="simulation-duration">35 sec</span></div>
               <video id="sim-recovery-video" controls playsinline preload="none" poster="assets/images/sim-recovery.jpg" width="1280" height="824" aria-label="Simulation example illustrating EVA's recovery"><source src="assets/videos/sim-recovery.mp4" type="video/mp4"></video>
-              <figcaption>Recovery restores a stable state for subsequent execution, reducing the risk of starting the next rollout from an out-of-distribution state.</figcaption>
             </figure>
     </section>
   </main>
-  <footer class="site-footer"><a class="wordmark" href="#top">EVA<span class="wordmark-dot"></span></a><p>Anonymous submission <span aria-hidden="true">/</span> Video supplementary material</p><a href="#top" class="back-top" aria-label="Back to top" title="Back to top"><i data-lucide="arrow-up"></i></a></footer>
+  <footer class="site-footer"><a class="wordmark" href="#top">EVA<span class="wordmark-dot"></span></a><a href="#top" class="back-top" aria-label="Back to top" title="Back to top"><i data-lucide="arrow-up"></i></a></footer>
 </body>
 </html>
